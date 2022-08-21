@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<h1>Songs</h1>
+<div class="row">
+{% for song in songs %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static song.image %}">
+            <div class="card-body">
+                <h5 class="card-title">{{ song.title }}</h5>
+                <p class="card-text">{{ song.artist }}</p>
+                <a href="{% url 'song_detail' song.pk %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
