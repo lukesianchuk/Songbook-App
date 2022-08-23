@@ -8,11 +8,13 @@
         <img src="{% static song.image %}" alt="" width="100%">
     </div>
     <div class="col-md-4">
-        <h5>About the project:</h5>
+        <h5>Artist:</h5>
         <p>{{ song.artist }}</p>
         <br>
-        <h5>Technology used:</h5>
+        <h5>Instrument:</h5>
         <p>{{ song.instrument }}</p>
+        <br>
+        <a href={{ song.chordlink }}>Chords</a>
     </div>
 </div>
 {% endblock %}
