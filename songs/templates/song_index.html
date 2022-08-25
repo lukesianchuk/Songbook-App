@@ -2,18 +2,18 @@
 {% load static %}
 
 {% block page_content %}
-<h1 style="color:red;">Songs</h1>
-<div style="background-color:lightblue;" class="row">
+<h1 style="color:blue; text-align:center; padding:30px">Songlist</h1>
+<div style="background-color:lightblue; padding: 15px" class="row">
 {% for song in songs %}
-    <div class="col-md-2">
-        <div class="card mb-2">
+    <div class="col-md-3" style="padding:20px">
+        <div class="card mb-3">
             <img class="card-img-top" src="{% static song.image %}">
             <div class="card-body">
                 <h5 class="card-title">{{ song.title }}</h5>
                 <p class="card-text">{{ song.artist }}</p>
                 <a href="{% url 'song_detail' song.pk %}"
                    class="btn btn-primary">
-                    Read More
+                    Details
                 </a>
             </div>
         </div>
