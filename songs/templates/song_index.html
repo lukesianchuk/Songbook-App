@@ -3,6 +3,9 @@
 
 {% block page_content %}
 <h1 style="color:blue; text-align:center; padding:30px">Songlist</h1>
+
+<a href="{% url 'song_form' %}">Add Song</a>
+
 <div style="background-color:lightblue; padding: 15px" class="row">
 {% for song in songs %}
     <div class="col-md-3" style="padding:20px">
@@ -15,6 +18,8 @@
                    class="btn btn-primary">
                     Details
                 </a>
+                </br>
+                <a href="delete/{{ song.pk }}">DELETE</a>
             </div>
         </div>
     </div>
