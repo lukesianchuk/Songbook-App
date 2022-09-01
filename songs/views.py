@@ -20,7 +20,7 @@ def song_detail(request, pk):
 
 def song_form(request):
     if request.method == "POST":
-        form = SongForm(request.POST)
+        form = SongForm(request.POST, request.FILES)
         if form.is_valid():
             song = form.save()
             return redirect("/songs")
