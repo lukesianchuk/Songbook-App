@@ -30,8 +30,18 @@ def song_form(request):
 
 def delete(request, pk):
     song = Song.objects.get(pk=pk)
-    song.delete()
-    return redirect("/songs")
+    context ={}
+ 
+ 
+    if request.method =="POST":
+        # delete object
+        song.delete()
+        # after deleting redirect to
+        # home page
+        return redirect("/songs")
+ 
+    return render(request, "song_delete.html", context)
+
 
 
 
