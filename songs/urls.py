@@ -6,4 +6,5 @@ urlpatterns = [
     path("<int:pk>/", views.song_detail, name="song_detail"),
     path("add", views.song_form, name="song_form"),
     path("delete/<int:pk>", views.delete, name = "delete"),
+    path("update/<int:pk>", views.update, name = "song_update"),
 ]

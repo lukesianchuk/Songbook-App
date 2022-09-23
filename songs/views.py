@@ -43,6 +43,29 @@ def delete(request, pk):
     return render(request, "song_delete.html", context)
 
 
+def update(request, pk):
+    # dictionary for initial data with
+    # field names as keys
+    context ={}
+ 
+    # fetch the object related to passed id
+    song = Song.objects.get(pk=pk)
+ 
+    # pass the object as instance in form
+    form = SongForm(request.POST or None, instance = song)
+ 
+    # save the data from the form and
+    # redirect to detail_view
+    if form.is_valid():
+        form.save()
+        return redirect("/songs")
+ 
+    # add form dictionary to context
+    context["form"] = form
+ 
+    return render(request, "song_update.html", context)
+
+
 
 
     
